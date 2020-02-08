@@ -1,18 +1,26 @@
-from srt.srt_2_txt import srt_2_txt
+from srt.task_ft import ft
+from srt.task_data_txt import data_txt
+from srt.paths import *
 
 
-def task_srt_2_txt():
-    def srt_2_txt_all():
-        with open('all.txt', 'w') as f:
-            f.write('\n'.join(srt_2_txt('all.srt')))
-
+def task_init():
     return {
-        'actions': [srt_2_txt_all],
+        'actions': ['mkdir -p out'],
+        'file_dep': [],
+        'targets': [],
+        'uptodate': [],
+        'verbosity': 2
+    }
+
+
+def task_data_txt():
+    return {
+        'actions': [data_txt],
         'file_dep': [
-            'srt/srt_2_txt.py',
-            'all.srt',
+            py.task_data_txt,
+            data.data_srt,
         ],
-        'targets': ['all.txt'],
+        'targets': [data.data_txt],
         'uptodate': [],
         'verbosity': 2,
     }
@@ -20,9 +28,12 @@ def task_srt_2_txt():
 
 def task_ft():
     return {
-        'actions': [],
-        'file_dep': [],
-        'targets': [],
+        'actions': [ft],
+        'file_dep': [
+            py.task_ft,
+            data.data_txt
+        ],
+        'targets': [out.ft],
         'uptodate': [],
         'verbosity': 2
     }
