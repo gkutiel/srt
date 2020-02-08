@@ -1,3 +1,4 @@
+from srt.task_data_json import data_json
 from doit.tools import run_once
 from srt.task_clusters_json import clusters_json
 from srt.task_ft_model import ft_model
@@ -49,6 +50,19 @@ def task_clusters_json():
             out.ft_model
         ],
         'targets': [],
+        'uptodate': [],
+        'verbosity': 2
+    }
+
+
+def task_data_json():
+    return {
+        'actions': [data_json],
+        'file_dep': [
+            py.task_data_json,
+            out.clusters_json,
+        ],
+        'targets': [out.data_json],
         'uptodate': [],
         'verbosity': 2
     }

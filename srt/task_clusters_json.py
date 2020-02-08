@@ -21,7 +21,7 @@ def clusters_json():
 
     clusters = [
         {
-            'words': word,
+            'word': word,
             'label': label,
             'vec_100': vec_100,
             'vec_2': vec_2,
