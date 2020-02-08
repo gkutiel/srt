@@ -16,3 +16,23 @@ def task_srt_2_txt():
         'uptodate': [],
         'verbosity': 2,
     }
+
+
+def task_ft():
+    return {
+        'actions': [],
+        'file_dep': [],
+        'targets': [],
+        'uptodate': [],
+        'verbosity': 2
+    }
+
+
+def task_dummy():
+    return {
+        'actions': [],
+        'file_dep': [],
+        'targets': [],
+        'uptodate': [],
+        'verbosity': 2
+    }
