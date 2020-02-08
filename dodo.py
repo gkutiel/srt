@@ -41,7 +41,7 @@ def task_ft():
     }
 
 
-def task_cluster_words():
+def task_clusters_json():
     return {
         'actions': [clusters_json],
         'file_dep': [
