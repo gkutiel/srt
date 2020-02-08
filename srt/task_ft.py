@@ -2,4 +2,5 @@ import fasttext
 
 
 def ft():
-    pass
+    model = fasttext.train_unsupervised('all.txt')
+    model.save_model()
