@@ -1,4 +1,5 @@
-from srt.task_ft import ft
+from srt.task_clusters_json import clusters_json
+from srt.task_ft_model import ft_model
 from srt.task_data_txt import data_txt
 from srt.paths import *
 
@@ -28,12 +29,25 @@ def task_data_txt():
 
 def task_ft():
     return {
-        'actions': [ft],
+        'actions': [ft_model],
         'file_dep': [
-            py.task_ft,
+            py.task_ft_model,
             data.data_txt
         ],
-        'targets': [out.ft],
+        'targets': [out.ft_model],
+        'uptodate': [],
+        'verbosity': 2
+    }
+
+
+def task_cluster_words():
+    return {
+        'actions': [clusters_json],
+        'file_dep': [
+            py.task_clusters_json,
+            out.ft_model
+        ],
+        'targets': [],
         'uptodate': [],
         'verbosity': 2
     }

@@ -1,13 +1,6 @@
 from pathlib import Path
 
 
-class py:
-    _ = Path('srt')
-
-    task_data_txt = _ / 'task_data_txt.py'
-    task_ft = _ / 'task_ft.py'
-
-
 class data:
     _ = Path('data')
 
@@ -15,7 +8,16 @@ class data:
     data_txt = _ / 'data.txt'
 
 
+class py:
+    _ = Path('srt')
+
+    task_data_txt = _ / 'task_data_txt.py'
+    task_ft_model = _ / 'task_ft_model.py'
+    task_clusters_json = _ / 'task_clusters_json.py'
+
+
 class out:
     _ = Path('out')
 
-    ft = _ / 'ft.model'
+    ft_model = _ / 'ft.model'
+    clusters_json = _ / 'clusters.json'

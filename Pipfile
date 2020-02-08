@@ -10,6 +10,7 @@ doit = "*"
 
 [packages]
 fasttext = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.6"
