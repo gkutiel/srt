@@ -1,3 +1,4 @@
+from doit.tools import run_once
 from srt.task_clusters_json import clusters_json
 from srt.task_ft_model import ft_model
 from srt.task_data_txt import data_txt
@@ -9,7 +10,7 @@ def task_init():
         'actions': ['mkdir -p out'],
         'file_dep': [],
         'targets': [],
-        'uptodate': [],
+        'uptodate': [run_once],
         'verbosity': 2
     }
 
